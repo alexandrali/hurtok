@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FormControl } from '@angular/forms';
-import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 import { Subscription } from 'apollo-client/util/Observable';
 
 @Component({
@@ -11,8 +11,8 @@ import { Subscription } from 'apollo-client/util/Observable';
 })
 export class LoginComponent implements OnInit {
 
-  login: FormControl;
-  loginListener: Subscription;
+  password: FormControl;
+  passwordListener: Subscription;
 
   email: FormControl;
   emailListener: Subscription;
@@ -31,14 +31,26 @@ export class LoginComponent implements OnInit {
 
   currentUser: any;
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
-    const currentUser = localStorage.getItem('role');
 
-    if (currentUser) {
-      this.currentUser = currentUser === 'parent' ? this.parent : this.teacher;
-    }
+    this.email = new FormControl();
+    this.emailListener = this.email.valueChanges.subscribe((value) => {
+      console.log(this.email);
+    });
+
+    this.password = new FormControl();
+    this.passwordListener = this.password.valueChanges.subscribe((value) => {
+      console.log(this.password);
+    });
+  }
+
+  click() {
+    localStorage.setItem('email', this.email.value);
+    this.router.navigate(['home']);
   }
 }
 

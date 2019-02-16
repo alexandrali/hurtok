@@ -1,4 +1,12 @@
-<div>
-  <input/>
-  <input/>
+<div class="login-form">
+  <form>
+    <div class="form-group">
+      <input ngModel="email" type="text" class="form-control" id="formGroupExampleInput" placeholder="Iмя">
+    </div>
+    <div class="form-group">
+      <input ngModel="password" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Пароль">
+    </div>
+  </form>
+
+  <button type="button" class="btn btn-info" (click)="click();">Зайсцi</button>
 </div>

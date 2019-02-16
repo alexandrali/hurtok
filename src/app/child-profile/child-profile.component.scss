@@ -1,17 +1,57 @@
 .child-profile {
-    margin: 0px 100px;
+    margin: 0px 200px;
 }
 
+img {
+    border-radius: 50%;
+    margin-right: 30px;
+}
 .child-info {
-    img {
-        border-radius: 50%;
-    }
-    div {
-        display: inline-block;
-    }
+    display: inline-block;
 }
 
 .avatar {
     height: 150px;
     width: 150px;
+}
+
+p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.projects-info {
+    width: 100%;
+    height: auto;
+    position: relative;
+    text-align: center;
+}
+.projects-info::before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 100%;
+    background: brown;
+    z-index: 1;
+}
+
+.skill {
+    width: 100%;
+    div {
+        width: 170px;
+        height: 102px;
+        border-radius: 12px 102px 0 90px;
+        background: green;
+        display: inline-block;
+        margin: 0 0 30px;
+    }
+}
+
+.skill:nth-child(2n+1) div {
+    margin-right: 250px;
+}
+
+.skill:nth-child(2n) div {
+    margin-left: 250px;
+    transform: rotateY(180deg);
 }

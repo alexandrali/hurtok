@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,26 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  isIn: boolean;
+
   constructor(
+    private router: Router
   ) { }
 
   ngOnInit() {
+    this.isIn = !!localStorage.getItem('email');
+    console.log(this.isIn);
   }
 
   click() {
-    /*const client = new ApolloClient({
-      link: createHttpLink({ uri: 'https://eu1.prisma.sh/uxname-46c706/ira/dev' }),
-      cache: new InMemoryCache()
-    });
-
-    const query = gql`
-    query {
-      user(where: {email: "admin@admin.com"}) {
-        email
-      }
-    }
-  `;*/
-
+    localStorage.removeItem('email');
+    this.router.navigate(['login']);
   }
 
 }
