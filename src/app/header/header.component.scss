@@ -3,25 +3,28 @@
     height: 60px;
     background: #8bc34a;
     position: relative;
+
     span {
-        color: black;
-        font-size: 32px;
+        font-family: hurok;
+        color: white;
+        font-size: 38px;
         margin-left: 40px;
     }
     button{
         position: absolute;
         top: 10px;
         right: 40px;
-        color: #463129;
+        color: white;
         font-size: 24px;
         text-transform: uppercase;
-        text-decoration: underline;
+        text-decoration: none;
         margin: 0;
         padding: 0;
         letter-spacing: 2px;
         font-weight: bold;
         &:hover {
-            color: #1b1310;
+            color: white;
+            text-decoration: underline;
         }
     }
 }
