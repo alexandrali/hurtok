@@ -1,6 +1,6 @@
 .child-profile {
     margin: 0px 180px;
-    font-family: Courier New;
+    font-family: custom-font;
 }
 
 
@@ -45,8 +45,8 @@ p {
     content: '';
     position: absolute;
     width: 3px;
-    height: 100%;
-    background: brown;
+    height: calc(100% + 40px);
+    background: #632812bd;
     z-index: 1;
 }
 
@@ -56,21 +56,102 @@ p {
         width: 170px;
         height: 102px;
         border-radius: 12px 102px 0 90px;
-        background-color: green; /* For browsers that do not support gradients */
-        background-image: linear-gradient(to top, green , yellow);
         display: inline-block;
-        margin: 0 0 30px;
+        margin: 0px 0 -40px;
+        font-size: 12px;
+    }
+    &:nth-child(1) div{
+        background-size: 100% 40%;
+        background: #fdfdb1;
+        border: 1px solid #fff7b4;
+    }
+    &:nth-child(2) div{
+        background: #ff87b0;
+        border: 1px solid #ff76a4;
+        
+    }
+    &:nth-child(3) div{
+        background: #e280f3;
+        border: 1px solid #cd5de0;
+    }
+    &:nth-child(4) div{
+        background: #91ceff;
+        border: 1px solid #73c1ff;
+    }
+    &:nth-child(5) div{
+        background:#ceff95;
+        border: 1px solid #b9ea7f;
+    }
+}
+
+.change-style {
+    &:nth-child(2) div{
+        background-image: linear-gradient(#ff76a4, red);
+        border: 1px solid #ff76a4;
+        
+    }
+    &:nth-child(3) div{
+        background-image: linear-gradient(#fbe5ff, #9C27B0);
+        border: 1px solid #cd5de0;
     }
 }
 
 .skill:nth-child(2n+1) div {
-    margin-right: 250px;
+    margin-right: 220px;
 }
 
 .skill:nth-child(2n) div {
-    margin-left: 250px;
+    margin-left: 220px;
     transform: rotateY(180deg);
 }
+
+ul {
+    padding: 0;
+}
+
+li {
+    cursor: pointer;
+    list-style-type: none;
+}
+
+li:hover {
+    background: #8bc34a;
+}
+
+.currentProject {
+    margin: 0 0 0 auto;
+
+    background: #ffeb3b14;
+    border: 1px solid #ffeb3beb;
+    border-radius: 5px;
+    padding: 20px;
+
+    p {
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    li {
+        margin-bottom: 10px;
+    }
+}
+
+.add-skills {
+    margin: 0 0 0 auto;
+    button {
+        background: #8bc34a;
+        border: none;
+        text-transform: uppercase;
+        color: white;
+        font-weight: bold;
+    }
+}
+.add-skills button:hover {
+    background: #719e3d;
+    border: none;
+    color: white;
+}
+
 
 @media only screen and (max-width: 768px) {
     .child-profile {

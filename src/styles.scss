@@ -5,3 +5,8 @@ html, body {
     padding: 0;
     height: 100%;
 }
+
+@font-face {
+    font-family: 'custom-font';
+    src: url(assets/Montserrat-Regular.ttf) format("opentype");
+  }

@@ -8,13 +8,43 @@
       <p>Cадок: №403</p>
       <p>Групка: Матылькі</p>
       <p>Выхавацелька: Тацяна Іванаўна Iванова</p>
-      <p>Maцi: Тацяна Іванаўна Iванова</p>
-      <p>Тата: Тацяна Іванаўна Iванова</p>
+      <p>Maцi: Наталля Іванаўна Iванова</p>
+      <p>Тата: Андрэй Іванавiч Iваноу</p>
     </div>
   </div>
 
   <br>
   <br>
+
+  <div class="row">
+    <div class="col-xs-12 pull-right add-skills">
+      <button type="button" class="btn" (click)="show();">выбраць навык</button>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="row" *ngIf="this.currentProject">
+    <div class="currentProject col-xs-12 pull-right">
+      <h4>{{ currentProject.title }}</h4>
+      <p>Навыкi:</p>
+      <ul>
+        <li *ngFor="let skill of currentSkills">{{ skill.title }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="row" *ngIf="this.currentProject">
+    <div class="col-xs-12 pull-right add-skills">
+      <button type="button" class="btn" (click)="add();">дадаць навык</button>
+    </div>
+  </div>
+
+  <br>
+  <br>
+
 
   <!--<div class="projects-info">
     <div class="skill col-xs-12 text-center"><div></div></div>
@@ -24,15 +54,38 @@
     <div class="skill col-xs-12 text-center"><div></div></div>
   </div>-->
 
-  <br>
-  
-  <div class="other-info">
-    <h4>Ідэі шчасьлівага бацькоўства</h4>
-    <ul>
-      <li>Павучыцеся з Ядзяй падаць. Пасцяліце коўдру, вазьміце палкі і проста падайце з імі на коўдру са смехам.</li>
-      <li>Павучыцеся ацэньваць сітуацыю. Схадзіце ў парк і паназірайце за іншымі дзеткамі. Выберыце пэўныя незвычайныя сітуацыі ў якія яны трапляюць і разам з ім прааналізуйце іх.</li>
-    </ul>
+  <div class="projects-info">
+    <div class="skill col-xs-12 text-center" [ngClass]="{'change-style' : changeStyles}" *ngFor="let skill of skills" data-placement="bottom" tooltip="{{ skill.title }}"><div></div></div>
   </div>
 
+  <br>
+  <br>
+  <br>
+ 
+  <div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">Выберыце дзейнасць</h4>
+          <button type="button" class="close pull-right" aria-label="Close" (click)="hide()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li class="list-group-item"  *ngFor="let project of projects" (click)="setProject(project)">
+              {{project.title}}
+            </li>
+          </ul>
+        </div>
+
+        <div class="modal-footer">
+          <div class="pull-left">
+            <button class="btn btn-default" (click)="hide()">Назад</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <br>
 </div>
