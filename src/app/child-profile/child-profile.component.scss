@@ -1,23 +1,38 @@
 .child-profile {
-    margin: 0px 200px;
+    margin: 0px 180px;
+    font-family: Courier New;
 }
 
-img {
-    border-radius: 50%;
-    margin-right: 30px;
-}
+
 .child-info {
     display: inline-block;
 }
 
-.avatar {
-    height: 150px;
-    width: 150px;
+img {
+    border-radius: 50%;
+}
+
+h4{
+    color: #2f421a;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.info {
+    p {
+        color: #464646;
+    }
+}
+
+.avatar img{
+    height: 176px;
+    width: 176px;
 }
 
 p {
     margin: 0;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .projects-info {
@@ -41,7 +56,8 @@ p {
         width: 170px;
         height: 102px;
         border-radius: 12px 102px 0 90px;
-        background: green;
+        background-color: green; /* For browsers that do not support gradients */
+        background-image: linear-gradient(to top, green , yellow);
         display: inline-block;
         margin: 0 0 30px;
     }
@@ -54,4 +70,29 @@ p {
 .skill:nth-child(2n) div {
     margin-left: 250px;
     transform: rotateY(180deg);
+}
+
+@media only screen and (max-width: 768px) {
+    .child-profile {
+        margin: 0px 50px;
+    }
+
+    .avatar {
+        margin: 0 auto;    
+        img {
+            margin-bottom: 30px;
+        }
+    }
+
+    .info {
+        margin: 0 auto;
+    }
+}
+
+
+
+@media only screen and (min-width: 769px) {
+    img {
+        margin-right: 50px;
+    }
 }
